@@ -37,14 +37,18 @@ public class Endpoint {
 
     private Integer loglines = 0;
 
+    private String jenkinsMaster;
+
     @DataBoundConstructor
-    public Endpoint(Protocol protocol, String url, String event, Format format, Integer timeout, Integer loglines) {
+    public Endpoint(Protocol protocol, String url, String event, Format format,
+            Integer timeout, Integer loglines, String jenkinsMaster) {
         setProtocol( protocol );
         setUrl( url );
         setEvent( event );
         setFormat( format );
         setTimeout( timeout );
         setLoglines( loglines );
+        setJenkinsMaster( jenkinsMaster );
     }
 
     public int getTimeout() {
@@ -96,6 +100,14 @@ public class Endpoint {
 
     public void setLoglines(Integer loglines) {
         this.loglines = loglines;
+    }
+
+    public String getJenkinsMaster(){
+        return jenkinsMaster;
+    }
+
+    public void setJenkinsMaster(String jenkinsMaster ){
+        this.jenkinsMaster = jenkinsMaster;
     }
 
     public FormValidation doCheckURL(@QueryParameter(value = "url", fixEmpty = true) String url) {

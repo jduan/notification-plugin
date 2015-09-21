@@ -64,6 +64,13 @@
                                     </f:entry>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <f:entry title="JenkinsMaster" description="The hostname of the Jenkins this job runs on" field="jenkinsMaster">
+                                        <f:textbox name="jenkinsMaster" value="${endpoint.jenkinsMaster}" />
+                                    </f:entry>
+                                </td>
+                            </tr>
                         </table>
                     </f:entry>
                     <f:repeatableDeleteButton value="${%Delete}" />
